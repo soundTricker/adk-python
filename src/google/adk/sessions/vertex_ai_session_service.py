@@ -178,7 +178,7 @@ class VertexAiSessionService(BaseSessionService):
     )
     get_session_api_response = _convert_api_response(get_session_api_response)
 
-    if get_session_api_response["userId"] != user_id:
+    if get_session_api_response['userId'] != user_id:
         raise ValueError(f'Session not found: {session_id}')
 
     session_id = get_session_api_response['name'].split('/')[-1]
@@ -187,7 +187,7 @@ class VertexAiSessionService(BaseSessionService):
     ).timestamp()
     session = Session(
         app_name=str(app_name),
-        user_id=str(get_session_api_response["userId"]),
+        user_id=str(get_session_api_response['userId']),
         id=str(session_id),
         state=get_session_api_response.get('sessionState', {}),
         last_update_time=update_timestamp,
