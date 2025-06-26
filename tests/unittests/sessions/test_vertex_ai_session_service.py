@@ -291,6 +291,7 @@ async def test_get_empty_session(agent_engine_id):
     )
   assert str(excinfo.value) == 'Session not found: 0'
 
+
 @pytest.mark.asyncio
 @pytest.mark.usefixtures('mock_get_api_client')
 @pytest.mark.parametrize('agent_engine_id', [None, '123'])
