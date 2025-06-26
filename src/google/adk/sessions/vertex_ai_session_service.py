@@ -187,7 +187,7 @@ class VertexAiSessionService(BaseSessionService):
     ).timestamp()
     session = Session(
         app_name=str(app_name),
-        user_id=str(get_session_api_response['userId']),
+        user_id=str(user_id),
         id=str(session_id),
         state=get_session_api_response.get('sessionState', {}),
         last_update_time=update_timestamp,
