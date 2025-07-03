@@ -236,6 +236,7 @@ class VertexAiSessionService(BaseSessionService):
           path=f'reasoningEngines/{reasoning_engine_id}/sessions/{session_id}/events?pageToken={page_token}',
           request_dict={},
       )
+      list_events_api_response = _convert_api_response(list_events_api_response)
       session.events += [
           _from_api_event(event)
           for event in list_events_api_response['sessionEvents']
